@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    outline: none;
+}
+
+body {
+    background-color: blueviolet;
+}
+
+.container {
+    background-color: #d1d1d1;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 100px auto 0;
+}
+
+img {
+    height: 25px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.input-tarefa{
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    
+}
+.btn-add-tarefa{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    color: #fff;
+    background-color: #0033;
+    font-size:17px;
+    padding:0 15px;
+    float: right;
+    cursor: pointer;
+
+}
+.btn-add-tarefa:hover{
+    opacity: 0.8;
+}
+.btn-add-tarefa:active{
+    opacity: 0.6;
+}
+.lista-de-tarefas{
+    width:100%;
+    list-style: none;
+    margin-top:20px;
+}
+
+.tarefa{
+    background-color: #f2f2f2;
+    box-shadow: 1px 4px 10pxrgba(0, 0, 0, 0.2);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin-bottom:20px;
+    cursor: pointer;
+
+}
+.tarefa:hover img{
+    opacity: 1;
+    
+}
+.feita{
+    background-color: #12eb66;
+    text-decoration: line-through;
+}
