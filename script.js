@@ -72,6 +72,14 @@ function excluirLista(indexBox) {
     salvarListas();
     renderizarListas();
 }
+function concluirLista(indexBox) {
+    myBox[indexBox].tarefas.forEach(tarefa => {
+        tarefa.concluida = true;  // Marca todas as tarefas como concluídas
+    });
+    salvarListas();  // Salva a lista atualizada no localStorage
+    renderizarListas();  // Re-renderiza as listas para refletir a mudança
+}
+
 
 // Função para renderizar as listas e suas tarefas
 function renderizarListas() {
@@ -81,7 +89,10 @@ function renderizarListas() {
         // Criando a estrutura HTML da lista
         let listaHTML = `
             <div class="box">
-                <h1>${box.nome} <img class="apagarBox" src="./img/apagar.png" alt="Apagar" onclick="excluirLista(${indexBox})"></h1>
+                <div class="teste"><img class="concluirBox" src="./img/concluir.png" alt="Concluir" onclick="concluirLista(${indexBox})"><h1>${box.nome} 
+                    
+                
+                </h1><img class="apagarBox" src="./img/apagar.png" alt="Apagar" onclick="excluirLista(${indexBox})"></div>
                 <input class="input-tarefa" placeholder="Adicionar tarefa...">
                 <button class="btn-add-tarefa" onclick="adicionarTarefa(${indexBox})">Adicionar</button>
                 <ul class="lista-de-tarefas">
@@ -102,7 +113,6 @@ function renderizarListas() {
         container.innerHTML += listaHTML; // Adiciona a lista na página
     });
 }
-
 // Evento para adicionar uma nova lista ao clicar no botão
 buttonAddLista.addEventListener('click', adicionarLista);
 
